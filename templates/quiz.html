@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/quizstyle.css">
+    <title>Aptitude Test</title>
+</head>
+<body>
+    <nav class="navbar nav-height-resp">
+        <div class= "leftnav v-class-resp">RecruPortal</div>
+    </nav>
+    <div class="timer">
+        Time Left: <span class="countdown" id="countdown"></span> minutes
+    </div>
+    {% for q in quiz %}
+    <table class="quiz-table" id="quiz-table">
+        <tr>
+            <td>Q. {{ q.question }}</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="opt" id="opt1">{{ q.answer1 }}</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="opt" id="opt2">{{ q.answer2 }}</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="opt" id="opt3">{{ q.answer3 }}</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="opt" id="opt4">{{ q.answer4 }}</td>
+        </tr>
+    </table>
+    {% endfor %}
+    <button class="submit-quiz">Submit the test</button>
+    <script src="static/responsive.js"></script>
+</body>
+</html>
